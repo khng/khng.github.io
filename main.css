@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     height: 100%;
 }
@@ -7,7 +11,8 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0px;
-    font-family: Arial, sans-serif
+    font-family: Arial, sans-serif;
+    cursor: default;
 }
 
 .links {
@@ -27,15 +32,14 @@ header {
 #nav-bar {
     display: flex;
     justify-content: space-around;
-    padding-bottom: 10px;
-    margin: 10px;
+    padding: 10px;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,.0785);
 }
 
 #nav-title {
     font-weight: 600;
     font-size: 32px;
-    font-family: Times, serif
+    font-family: Times, serif;
 }
 
 .header-items {
@@ -106,6 +110,7 @@ footer {
 .types {
     border-bottom: 1px solid rgba(0, 0, 0, 0.54);
     padding-bottom: 6px;
+    cursor: pointer;
 }
 
 .btn-social {
@@ -174,4 +179,8 @@ footer {
 
 #pivotal-color {
     color: rgb(29,182,168);
+}
+
+#scc-color {
+    color: rgb(0,158,164);
 }
