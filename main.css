@@ -70,7 +70,6 @@ header {
 
 main {
     flex-grow: 1;
-    margin-top: 130px;
     max-width: 700px;
     width: 100%;
 }
@@ -119,12 +118,13 @@ footer {
     margin: 0 25px 0;
     font-size: 20px;
     color: #000;
-  }
+}
 
 #main-top {
     display: flex;
     justify-content: space-between;
     margin-bottom: 45px;
+    padding-top: 130px;
 }
 
 .main-text-spacing {
