@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            min-width: 300px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        .result {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .result-row:last-child {
+            border-bottom: none;
+        }
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+        .value {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parking</h1>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateNumber() {
+            // Base date: June 1st, 2025
+            const baseDate = new Date('2025-06-01');
+            const baseNumber = 20700;
+            
+            // Get current date
+            const currentDate = new Date();
+            
+            // Calculate the difference in weeks
+            const diffTime = Math.abs(currentDate - baseDate);
+            const diffWeeks = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7));
+            
+            // Calculate the number
+            const currentNumber = baseNumber + (diffWeeks * 189);
+            
+            // Format the date
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            const formattedDate = currentDate.toLocaleDateString('en-US', options);
+            
+            // Display the result
+            document.getElementById('result').innerHTML = `
+                <div class="result-row">
+                    <span class="label">Current Date:</span>
+                    <span class="value">${formattedDate}</span>
+                </div>
+                <div class="result-row">
+                    <span class="label">Number:</span>
+                    <span class="value">${currentNumber}</span>
+                </div>
+            `;
+        }
+
+        // Run the calculation when the page loads
+        calculateNumber();
+    </script>
+</body>
+</html> 
